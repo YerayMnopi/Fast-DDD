@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 const title = "Fast DDD";
+const courseEntries = await getCollection('course');
 ---
 
 <Layout title={title}>
@@ -11,7 +13,7 @@ const title = "Fast DDD";
           Practical domain driven design. 
         </p>
         <a
-          href="/Fast-DDD/course/introduction"
+          href="/Fast-DDD/course/unit-1"
         >Start here</a>
       </div>
       <div class="circle xxlarge shade1"></div>
@@ -20,5 +22,14 @@ const title = "Fast DDD";
       <div class="circle mediun shade4"></div>
       <div class="circle small shade5"></div>
     </section>
+    <section class="index__second_section">
+      <h1 class="index__heading">Course content</h1>
+      <ul>
+        {courseEntries.map(blogPostEntry => (
+          <li>
+            <a href={`/Fast-DDD/course/${blogPostEntry.slug}`}>{blogPostEntry.data.title}</a>
+          </li>
+        ))}
+      </ul>
 </Layout>
 
