@@ -1,4 +1,5 @@
 ---
+import Circles from '../components/circles.astro';
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 const title = "Fast DDD";
@@ -15,15 +16,16 @@ const courseEntries = await getCollection('course');
         <a
           href="/Fast-DDD/course/unit-1"
         >Start here</a>
+        <Circles/>
       </div>
 
     </section>
     <section class="index__second_section">
-      <h1 class="index__heading">Course content</h1>
+      <h2 class="index__heading">Course content</h2>
       <ul>
-        {courseEntries.map(blogPostEntry => (
+        {courseEntries.map((blogPostEntry, index) => (
           <li>
-            <a href={`/Fast-DDD/course/${blogPostEntry.slug}`}>{blogPostEntry.data.title}</a>
+            <a href={`/Fast-DDD/course/${blogPostEntry.slug}`}>Unit {index + 1 }: {blogPostEntry.data.title}</a>
           </li>
         ))}
       </ul>

@@ -40,5 +40,20 @@ As the name suggests, supporting subdomains support the company’s business. Ho
 ![Chart explaining the distribution of subdomain types across bussiness logic complexity and bussines differentiation](../../images/subdomain_types.png)
 
 
-## Subdomains as a set of coherent use cases
+## Domain experts
+Domain experts are subject matter experts who know all the intricacies of the business that we are going to model and implement in code. Domain experts are either the people coming up with requirements or the software’s end users. The software is supposed to solve their problems.
 
+
+## Summary
+
+- Core subdomains -> The interesting problems. These are the activities the company is performing differently from its competitors and from which it gains its competitive advantage.
+- Generic subdomains -> The solved problems. These are the things all companies are doing in the same way. 
+- Supporting subdomains -> The problems with obvious solutions. These are the activities the company likely has to implement in-house, but that do not provide any competitive advantage.
+
+
+
+
+
+
+---
+[**Continue to unit 2**](/Fast-DDD/course/unit-2)
